@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('cd2d454bc7ef7b2d0add48dcc08a5837');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '청와대 · 서울 5대 궁궐 트레킹',
+        description: '서울의 5대 고궁을 가을날의 정취와 함께 느낄 수 있도록 걷기 축제를 개최합니다.',
+        imageUrl:
+          'https://ifh.cc/g/aXAcFF.jpg',
+        link: {
+          mobileWebUrl: 'https://event.ajunews.com/walk2023/',
+          webUrl: 'https://event.ajunews.com/walk2023/',
+        },
+      },
+      social: {
+        likeCount: 좋아요 수, //99999가 최대입니다
+        commentCount: 댓글 수, //99999가 최대입니다
+        sharedCount: 공유 수, //99999가 최대입니다
+      },
+      buttons: [
+        {
+          title: '신청하',
+          link: {
+            mobileWebUrl: 'https://event.ajunews.com/walk2023/',
+            webUrl: 'https://event.ajunews.com/walk2023/',
+          },
+        },
+      ],
+    })
+  }
+</script>
+<!-- www.blackcats4567.com -->
+<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
+  </body>
+</html>
